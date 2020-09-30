@@ -1,0 +1,201 @@
+mat-toolbar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 118px;
+    background-color: rgb(117, 34, 34);
+    opacity: 0.94;
+}
+
+.logo {
+    max-height: 115px;
+    width: 120px;
+    border-radius: 10px;
+}
+
+.menu-header {
+    flex-grow: 1;
+    line-height: 20vh;
+    margin-left: 50vw;
+    color: blanchedalmond;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-menu{
+    flex-grow: 1;
+    height: 115px;
+    /* line-height: 20px; */
+    font-size: 12px;
+    margin-left: 4vw;
+    margin-top: 2vh;
+    color: blanchedalmond;
+    white-space: pre;
+    overflow-y: auto;
+
+}
+
+br {
+    display: block;
+    margin: 2px 0;
+}
+
+span {
+    text-decoration-line: underline;
+    font-weight: bold;
+}
+
+.contact-details{
+    border: blanchedalmond solid 1px;
+    padding: 2px;
+}
+
+.container-menu {
+    display: flex;
+}
+
+#logout-btn{
+    font-size: 14px;
+    /* margin-left: 0.5vw; */
+    margin-top: 2vh;
+    text-shadow: blanchedalmond 1px 1px 3px;
+    display: inline-block;
+    
+}
+
+#logout-btn:hover{
+    cursor: pointer;
+    text-shadow: blanchedalmond 1px 1px 2px;
+    transition-duration: 0.3s;
+    
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 2500px) {
+    .menu-header{
+        margin-left: 90vw;
+    }
+    .container-menu {
+        margin-top: 10vh;
+    }
+    mat-toolbar{
+        margin-top: 40px;
+    }
+
+    #logout-btn{
+        margin-top: 8vh;
+        margin-left: 3vw;
+    }
+  }
+
+@media screen and (min-width: 1430px) {
+    .menu-header{
+        margin-left: 57vw;
+    }
+    .container-menu {
+        margin-top: 2.5vh;
+    }
+
+    mat-toolbar{
+        margin-top: 30px;
+    }
+
+    #logout-btn{
+        margin-top: 3vh;
+        margin-left: 1vw;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    .menu-header{
+        margin-left: 55vw;
+    }
+    
+  }
+
+  @media screen and (min-width: 1300px) {
+    .contact-menu{
+        margin-top: 5vh;
+    }
+  }
+
+@media screen and (max-width: 1200px) {
+    .menu-header{
+        margin-left: 50vw;
+    }
+    #logout-btn{
+        margin-top: 5vh;
+        margin-left: 5px;
+    }
+  }
+@media screen and (max-width: 1100px) {
+    .menu-header{
+        margin-left: 45vw;
+    }
+    .contact-menu{
+        margin-top: 5vh;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .menu-header{
+        margin-left: 40vw;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .menu-header{
+        margin-left: 30vw;
+    }
+    .contact-menu{
+        margin-top: 5vh;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .menu-header{
+        margin-left: 20vw;
+    }
+    #logout-btn{
+        margin-top: 5vh;
+        margin-left: 5px;
+    }
+    .contact-menu{
+        margin-top: 5vh;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .menu-header{
+        margin-left: 10vw;
+    }
+    .contact-menu{
+        margin-top: 5vh;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .menu-header{
+        margin-left: 5vw;
+    }
+    .logo {
+        max-height: 18vh ;
+        width: 100px;
+        border-radius: 10px;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .menu-header{
+        margin-left: 2vw;
+    }
+    .logo {
+        max-height: 18vh ;
+        width: 50px;
+        border-radius: 10px;
+    }
+
+    /*Not working*/
+    mat-toolbar{
+        width: 100% !important;
+    }
+
+    #logout-btn{
+        margin-top: 6vh;
+        margin-left: 2px;
+    }
+  }

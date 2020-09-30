@@ -1,0 +1,37 @@
+<div>
+
+    <h2 *ngIf="!_authService.isLogged && !_authService.signUp"> Login </h2>
+    <h2 *ngIf="_authService.isLogged"> Welcome ! </h2>
+
+    <button (click)="moveToProducts()" mat-stroked-button *ngIf="_authService.isLogged" type="button">
+        <span *ngIf="!_authService.hasCart"> Start</span>
+        <span *ngIf="_authService.hasCart">Resume</span>
+        &nbsp;
+        <span>shopping</span>
+    </button>
+
+    <form *ngIf="!_authService.isLogged && !_authService.signUp" [formGroup]="loginForm" (ngSubmit)="login()">
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="email" formControlName="email" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="password" formControlName="password" />
+        </mat-form-field>
+        <br />
+        <button mat-stroked-button type="submit"> Login </button>
+        &nbsp;&nbsp;
+        <a style="color: brown;" (click)="signUpClick()" href="#"> Sign up </a>
+        <br />
+        <br />
+
+        <p style="color: brown; font-weight: bold;" id="notification"> {{_authService.message}} </p>
+
+    </form>
+</div>
+
+<div *ngIf="_authService.signUp">
+    <app-sign-up-form></app-sign-up-form>
+</div>

@@ -1,0 +1,19 @@
+
+ yuval's Receipt:
+
+
+Product: Yolo   Amount: 1   Price: 4.70 ₪   Sum: 4.7
+
+Product: Milk   Amount: 1   Price: 5.90 ₪   Sum: 5.9
+
+Product: Strawberry   Amount: 1   Price: 12.90 ₪   Sum: 12.9
+
+Product: Cottage   Amount: 1   Price: 5.90 ₪   Sum: 5.9
+
+Product: Loacker - chocolate   Amount: 3   Price: 8.90 ₪   Sum: 26.700000000000003
+
+Product: Orange juice   Amount: 1   Price: 8.90 ₪   Sum: 8.9
+
+Product: Apple   Amount: 2   Price: 3.5 ₪   Sum: 7
+
+Total: 72 ₪   

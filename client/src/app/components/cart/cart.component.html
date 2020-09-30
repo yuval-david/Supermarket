@@ -1,0 +1,145 @@
+<!-- USER CART -->
+
+
+<table *ngIf="!_authService.isAdmin">
+    <tr>
+        <td class="header"> </td>
+        <td class="header"> product </td>
+        <td class="header"> amount </td>
+        <td class="header"> price </td>
+        <td class="header"> sum </td>
+    </tr>
+
+    <tr *ngFor="let product of cartProducts">
+        <td> <img alt={{product.productName}} class="prod-pic" [src]="'http://localhost:1000'+product.image"
+                onerror='this.src="https:\\i.pinimg.com/originals/5b/5b/68/5b5b68ddf9de812ffc941238e66049ac.png"' />
+        </td>
+        <td><span
+                [ngClass]="((product.productName.toUpperCase()).includes(_productsService.term.toUpperCase()) && _productsService.term != '') ? 'include' : ''">
+                {{product.productName}} </span> </td>
+        <td> <span> {{product.amount}} </span></td>
+        <td><span> {{product.price}} ₪</span> </td>
+        <td><span> {{(product.price * product.amount).toFixed(2)}} ₪</span> </td>
+        <td>
+            <mat-icon *ngIf="_productsService.orderComp" (click)="deleteProductCart(product.productID)"
+                id={{product.productID}} title="Delete" class="delete-btn">
+                delete
+            </mat-icon>
+        </td>
+    </tr>
+
+</table>
+
+
+<!-- ADMIN CART -->
+
+<h2 *ngIf="_authService.isAdmin && !_adminService.addClick">
+    <mat-icon (click)="formAddProd()" class="add-icon" *ngIf="!_adminService.addClick">library_add</mat-icon>
+    {{_productsService.choosenProdAdmin.productName}}
+</h2>
+
+<h2 *ngIf="_authService.isAdmin && _adminService.addClick"> Add a product </h2>
+
+<hr *ngIf="_authService.isAdmin" class="admin-hr" />
+<br />
+
+
+<!-- ADMIN - ADD & EDIT PRODUCTS FORM -->
+<form enctype="multipart/form-data" method="POST" *ngIf="_authService.isAdmin"
+    [formGroup]="_productsService.addProdForm" (ngSubmit)="addNewProduct()">
+
+    <!-- ADD - PRODUCT NAME -->
+    <mat-form-field *ngIf="_adminService.addClick" class="example-full-width">
+        <mat-label class="add-labels">Product name:</mat-label>
+        <input formControlName="productName" matInput type="text" placeholder="Apple" />
+    </mat-form-field>
+
+    <!-- EDIT - PRODUCT NAME -->
+    <label *ngIf="!_adminService.addClick">Product name: </label>
+    <input *ngIf="!_adminService.addClick" class="input-edit" formControlName="productName" type="text" />
+    <mat-icon class="edit-icon" *ngIf="!_adminService.addClick">edit</mat-icon>
+
+    <br />
+
+    <!-- ADD - CATEGORY -->
+    <mat-form-field *ngIf="_adminService.addClick" class="example-full-width">
+        <mat-label class="add-labels">Category:</mat-label>
+        <mat-select formControlName="category_id">
+            <mat-option disabled [value]="0" class="select-inputs"> Select category ... </mat-option>
+            <mat-option class="select-inputs" *ngFor="let category of _productsService.categories"
+                [value]="category.categoryID">
+                {{category.categoryName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <!-- EDIT - CATEGORY -->
+    <label *ngIf="!_adminService.addClick"> Category: </label>
+
+    <select formControlName="category_id" class="select-edit" *ngIf="!_adminService.addClick">
+        <option disabled [value]="0"> Select category ...</option>
+        <option *ngFor="let category of _productsService.categories" [value]="category.categoryID">
+            {{category.categoryName}}
+        </option>
+    </select>
+    <mat-icon class="edit-icon" *ngIf="!_adminService.addClick">edit</mat-icon>
+
+    <br />
+
+    <!-- ADD - PRICE -->
+    <mat-form-field *ngIf="_adminService.addClick" class="example-full-width">
+        <mat-label class="add-labels">Price:</mat-label>
+        <input min="1" formControlName="price" matInput type="number" />
+    </mat-form-field>
+
+    <!-- EDIT - PRICE -->
+    <label *ngIf="!_adminService.addClick">Price: </label>
+    <input *ngIf="!_adminService.addClick" class="input-edit" formControlName="price" type="number" />
+    <mat-icon class="edit-icon" *ngIf="!_adminService.addClick">edit</mat-icon>
+
+    <br />
+
+
+
+    <label>Picture: </label>
+    <input (change)="onFileChanged($event)" *ngIf="_adminService.addClick" formControlName="image" type="file"
+        placeholder="Browse file" class="input-add" name="pic" />
+
+    <img alt={{_productsService.choosenProdAdmin.productName}} *ngIf="!_adminService.addClick" class="image-admin"
+        [src]="'http://localhost:1000'+_productsService.choosenProdAdmin.image"
+        onerror='this.src="https:\\i.pinimg.com/originals/5b/5b/68/5b5b68ddf9de812ffc941238e66049ac.png"' />
+
+    <br />
+
+
+    <br />
+    <input (change)="onFileChanged($event)" formControlName="image" id="inp-file" *ngIf="!_adminService.addClick"
+        class="input-edit" type="file" name="pic" />
+    <mat-icon class="edit-icon" *ngIf="!_adminService.addClick">edit</mat-icon>
+
+    <br />
+
+    <div class="btns-cartAdmin">
+        <button class="form-btn" mat-raised-button type="submit"> SAVE </button>
+        <button *ngIf="_adminService.addClick" class="form-btn" (click)="Back()" mat-raised-button type="button"> Back
+        </button>
+    </div>
+
+
+</form>
+
+<br />
+<br />
+
+<!-- USER CART -->
+<div *ngIf="!_authService.isAdmin" class="container-total">
+    <b class="header"> Total</b>: {{totalPrice}} ₪
+</div>
+
+<div *ngIf="_productsService.orderComp && !_authService.isAdmin" class="bottom-btn">
+    <a (click)="clearCart()" class="clearCart-btn" title="delete all the products in the cart">
+        Clear
+        cart </a>
+    &nbsp;&nbsp;
+    <button mat-raised-button id="order-btn" (click)="toOrderPage()"> Order </button>
+</div>

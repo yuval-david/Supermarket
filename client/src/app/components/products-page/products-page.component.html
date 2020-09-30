@@ -1,0 +1,32 @@
+<mat-toolbar *ngIf="!_productsService.isSearch">
+
+    <div class="categories-menu">
+        <button [ngClass]="category.categoryName == selectedCategory ? 'selected' : 'category-btn'"
+            (click)="productsByCategory(category.categoryID)" mat-stroked-button *ngFor="let category of categories">
+            {{category.categoryName}} </button>
+    </div>
+
+</mat-toolbar>
+
+<div *ngIf="!_productsService.isSearch" class="container-products">
+    <div *ngFor="let product of _productsService.products" class="product-card">
+        <h4> {{product.productName}} </h4>
+        <p> <span class="price">price</span>: {{product.price}} ₪ </p>
+        <img (click)="openProductDialog(product)" alt={{product.productName}} title="Click on me!" class="product-pic"
+            [src]="'http://localhost:1000'+product.image"
+            onerror='this.src="https:\\i.pinimg.com/originals/5b/5b/68/5b5b68ddf9de812ffc941238e66049ac.png"'
+            width="100px" height="100px" />
+    </div>
+
+</div>
+
+<div *ngIf="_productsService.isSearch" class="container-products">
+    <div *ngFor="let prod of _productsService.searchResultsHome" class="product-card">
+        <h4> {{prod.productName}} </h4>
+        <p> <span class="price">price</span>: {{prod.price}} ₪ </p>
+        <img (click)="openProductDialog(prod)" class="product-pic" alt={{prod.productName}}
+            [src]="'http://localhost:1000'+prod.image" width="100px" height="100px"
+            onerror='this.src="https:\\i.pinimg.com/originals/5b/5b/68/5b5b68ddf9de812ffc941238e66049ac.png"' />
+    </div>
+
+</div>

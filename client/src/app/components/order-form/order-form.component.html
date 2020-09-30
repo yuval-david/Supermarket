@@ -1,0 +1,38 @@
+<h2> Order </h2>
+<form [formGroup]="orderForm" (ngSubmit)="newOrder()">
+    <h4> Shipping Details </h4>
+    <mat-form-field class="example-full-width">
+        <mat-label>City</mat-label>
+        <input (dblclick)="getCity()" formControlName="sendCity" matInput type="text" placeholder="Try double click" />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+        <mat-label>Street</mat-label>
+        <input (dblclick)="getStreet()" formControlName="sendStreet" matInput type="text"
+            placeholder="Try double click" />
+    </mat-form-field>
+    <br />
+
+
+    <mat-form-field>
+        <input (dateChange)="checkDate()" placeholder="Date" formControlName="sendDate" matInput
+            [matDatepicker]="mydatepicker" [min]="tomorrow">
+        <mat-datepicker-toggle matSuffix [for]="mydatepicker"> </mat-datepicker-toggle>
+        <mat-datepicker #mydatepicker></mat-datepicker>
+    </mat-form-field>
+
+
+    <h4> Payments </h4>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Credit card</mat-label>
+        <input id="cc-number" type="tel" autocomplete="cc-number" ccNumber formControlName="payEnd" matInput
+            placeholder="credit card" />
+    </mat-form-field>
+
+    <br />
+    <button mat-raised-button> Order </button>
+
+    <div class="notification" *ngIf="isNote"> {{formNotes}} </div>
+
+</form>

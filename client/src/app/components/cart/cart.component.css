@@ -1,0 +1,176 @@
+table {
+    text-align: center;
+
+}
+
+td {
+    padding: 7px;
+    text-align: center;
+
+}
+
+tr {
+   border-bottom: blanchedalmond solid 1px;
+}
+
+.prod-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: white;
+    box-shadow: rgb(87, 22, 22) 0 0 3px 2px;
+}
+
+
+.delete-btn {
+    cursor: pointer;
+    color: black;
+}
+
+.delete-btn:hover{
+    color: rgb(235, 193, 130);
+    transition-duration: 0.3s;
+}
+
+.header {
+    text-decoration-line: underline;
+    font-weight: bold;
+}
+
+.clearCart-btn {
+    color: burlywood;
+    text-shadow: black 1px 1px;
+    font-weight: bold;
+    padding: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.clearCart-btn:hover{
+    transition-duration: 0.2s;
+    font-weight: bolder;
+    text-shadow: black 1px 1.5px;
+    padding: 5px;
+    text-decoration-line: underline;
+}
+
+div.container-total{
+    text-align: left;
+
+}
+
+div.bottom-btn{
+    text-align: right;
+    
+}
+
+#order-btn{
+    background-color: burlywood;
+   
+}
+
+#order-btn:hover{
+    font-weight: bold;
+    transition-duration: 0.4s;
+    background-color:rgb(223, 196, 161) ;
+   
+}
+
+.include{
+    background-color: yellow;
+    /* padding: 2px; */
+}
+
+.notInclude{
+    background-color: blanchedalmond;
+}
+
+.admin-hr {
+    width: 400px;
+    border: solid rgb(240, 196, 131) 1px;
+    
+}
+
+.admin-table{
+    text-align: center;
+}
+
+.image-admin{
+    border-radius: 10%;
+    padding: 5px;
+    background-color: white;
+    margin-top: 7px;
+    margin-left: 7px;
+    width: 50px;
+    height: 50px;
+    box-shadow: rgb(39, 9, 9) 0 0 3px 1px;
+}
+
+.add-icon{
+  margin-left: 90%;
+  cursor: pointer;
+}
+
+.table-headers{
+    text-decoration-line: underline;
+    text-align: left;
+}
+
+.table-content{
+    text-align: left;
+}
+
+.form-btn {
+    background-color: blanchedalmond;
+    margin-right: 5px;
+}
+
+.btns-cartAdmin {
+    text-align: center;
+}
+
+.input-edit {
+    border-radius: 5px;
+    background-color: brown;
+    color: blanchedalmond;
+    border: brown solid 1px;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.add-labels {
+    color: blanchedalmond;
+}
+
+.select-inputs{
+    color: burlywood;
+    background-color: brown;
+    font-weight: bold;
+    
+}
+
+
+#inp-file{
+    margin-top: 7px;
+}
+
+.select-edit {
+    background-color: brown;
+    color: blanchedalmond;
+    padding: 5px;
+    border: brown solid 1px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+   
+}
+
+.edit-icon {
+    margin-left: 20px;
+}
+
+.overflow{
+    overflow-y: auto;
+}

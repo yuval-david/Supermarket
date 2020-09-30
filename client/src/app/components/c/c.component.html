@@ -1,0 +1,21 @@
+<div>
+    <img alt="products"
+        src="https://tinobusiness.com/wp-content/uploads/2015/09/CONSUMER-PRODUCTS-e1442909155136.jpg" />
+    <br />
+    <label> Available products:</label> <span class="mark">{{productsNum}} </span>
+    <br />
+    <label> All orders until now:</label> <span class="mark">{{ordersNum}} </span>
+
+    <div class="notification" *ngIf="_authService.isLogged">
+        <p *ngIf="_authService.hasCart">
+            You have open cart from: <br />
+            <span class="dateDiv">
+                {{_productsService.cartCreationDate}}
+            </span> !
+        </p>
+        <p *ngIf="!_authService.hasCart && _authService.hadOrder"> Your last order was on
+            {{_authService.lastOrderDate}}
+        </p>
+        <p *ngIf="!_authService.hasCart && !_authService.hadOrder"> Welcome {{_authService.firstName}} ! </p>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<h2 *ngIf="_adminService.addClick" mat-dialog-title> Your product is added !</h2>
+<h2 *ngIf="!_adminService.addClick" mat-dialog-title> Your product is edited !</h2>
+<mat-dialog-actions>
+    <button (click)="refreshProducts()" mat-button mat-dialog-close> OK </button>
+</mat-dialog-actions>

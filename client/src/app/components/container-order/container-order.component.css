@@ -1,0 +1,73 @@
+app-search-cart {
+    background-color: blanchedalmond;
+    padding: 16px;
+    box-shadow: brown 0 0 1px 2px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    height: 5vh;
+}
+
+.container-div{
+    display: flex;
+    text-align: center;
+}
+
+.app {
+    width: 50%;
+    border: rgb(117, 34, 34) solid 2px;
+    background-color: blanchedalmond;
+    margin: 10px;
+    padding: 15px;
+    opacity: 0.95;
+}
+
+app-order-cart{
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+app-order-form{
+    max-height: 85vh;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+    
+    .container-div {
+       flex-direction: column;
+    }
+    
+    .app {
+        width: 700px;
+        height: auto; 
+    }
+
+  }
+
+@media screen and (max-width: 425px) {
+    
+    .container-div {
+       flex-direction: column;
+    }
+    
+    .app {
+        width: 365px;
+        height: auto; 
+    }
+
+  }
+
+  @media screen and (max-width: 375px) {
+    
+    .container-div {
+       flex-direction: column;
+    }
+    
+    .app {
+        width: 325px;
+        height: auto; 
+    }
+
+  }

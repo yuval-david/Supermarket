@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+    background-image: url('https://i.pinimg.com/736x/7e/fd/36/7efd3677e29d0dee03edb782564eab2a.jpg');
+    /* background-image: url('https://jetfuelcatering.com/wp-content/uploads/2018/08/food-background.jpg'); */
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+html, body { height: 100%; }
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }

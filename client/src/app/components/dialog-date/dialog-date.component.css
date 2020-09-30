@@ -1,0 +1,13 @@
+button{
+    background-color: blanchedalmond;
+}
+
+mat-dialog-content{
+    text-align: center;
+}
+
+mat-dialog-actions{
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}

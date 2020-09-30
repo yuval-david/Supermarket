@@ -1,0 +1,10 @@
+<span> Search a product : </span>
+<mat-form-field class="example-form-field">
+    <mat-label>search</mat-label>
+    <input matInput type="text" [(ngModel)]="searchValue">
+    <button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
+<button (click)="searchHomeFunc({'searchValue' :searchValue})" mat-stroked-button class="search-btn"> Search </button>
+<button (click)="clearSearch()" mat-stroked-button> Clear </button>

@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <img class="logo" alt="mySuperMarket"
+    src="https://i.pinimg.com/originals/5b/5b/68/5b5b68ddf9de812ffc941238e66049ac.png" />
+  <div class="container-menu">
+    <div class="menu-header"> Hello <b *ngIf="!_authService.isLogged">guest</b>
+      <b *ngIf="_authService.isLogged">
+        {{_authService.firstName}}
+      </b> !
+    </div>
+
+    <div class="contact-menu">
+      <span>Contact us</span>:
+      <div class="contact-details">
+        Email: mySupermarket@gmail.com <br />
+        Phone: *1818
+      </div>
+    </div>
+
+    <div>
+      <span *ngIf="_authService.isLogged" (click)="logOut()" id="logout-btn"> Log out </span>
+    </div>
+
+  </div>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

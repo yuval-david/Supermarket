@@ -1,0 +1,34 @@
+h2, h4 {
+    text-align: left;
+    text-decoration-line: underline;
+    
+}
+
+h4 {
+    margin-left: 15px;
+}
+
+button {
+    background-color: brown;
+    color: blanchedalmond;
+}
+
+input.date-inp {
+    background-color: burlywood;
+    border-radius: 5px;
+}
+
+label.date-inp{
+    opacity: 0.6;
+    text-decoration-line: underline;
+}
+
+span.date-inp{
+    opacity: 0.6;
+}
+
+.notification{
+    font-weight: bold;
+    color: brown;
+    margin-top: 7px;
+}

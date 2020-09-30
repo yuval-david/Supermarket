@@ -1,0 +1,31 @@
+
+img {
+    width: 95%;
+    max-width: 200px;
+    margin-bottom: 10px;
+    box-shadow: burlywood 0 0 2px 3px;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    margin: 4px;
+}
+
+span.mark{
+    font-weight: bold;
+    color: rgb(100, 28, 28);
+}
+
+.notification{
+    border: solid 1px rgb(90, 18, 18);
+    padding: 4px;
+    margin-top: 10px;
+    background-color: brown;
+    color: blanchedalmond;
+    font-weight: bold;
+}
+
+.dateDiv {
+    text-decoration-line: underline;
+}

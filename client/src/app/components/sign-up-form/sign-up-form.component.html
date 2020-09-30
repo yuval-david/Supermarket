@@ -1,0 +1,78 @@
+<h2 *ngIf="!_authService.isLogged"> Sign up </h2>
+
+<form *ngIf="!_authService.isLogged" [formGroup]="signUpForm" (ngSubmit)="signInSubmit()">
+
+    <!-- STEP 1 -->
+
+    <div *ngIf="!step">
+        <mat-form-field class="example-full-width">
+            <mat-label>ID</mat-label>
+            <input formControlName="userID" matInput type="text" placeholder="ID number" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput type="text" placeholder="email" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput type="password" placeholder="password" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+            <mat-label>Password confirm</mat-label>
+            <input formControlName="passwordConfirm" matInput type="password" placeholder="password" />
+        </mat-form-field>
+        <br />
+
+        <div class="notification"> {{notification1}} </div>
+
+        <br />
+        <button mat-stroked-button (click)="signUpCanel()"> Cancel </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" color="primary" mat-stroked-button (click)="nextStep()"> Next </button>
+
+
+
+    </div>
+
+    <!-- STEP 2 -->
+
+    <div *ngIf="step">
+        <mat-form-field class="example-full-width">
+            <mat-label>First name</mat-label>
+            <input formControlName="firstName" matInput type="text" placeholder="first name" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+            <mat-label>Last name</mat-label>
+            <input formControlName="lastName" matInput type="text" placeholder="last name" />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <mat-select formControlName="city">
+                <mat-option *ngFor="let city of citys" [value]="city">
+                    {{city}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+            <mat-label>Street</mat-label>
+            <input formControlName="street" matInput type="text" placeholder="street" />
+        </mat-form-field>
+
+        <br />
+        <div class="notification"> {{notification2}} </div>
+        <br />
+
+        <button mat-stroked-button (click)="backStep()" type="button"> back </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button color="primary" mat-stroked-button type="submit"> submit </button>
+    </div>
+
+
+</form>

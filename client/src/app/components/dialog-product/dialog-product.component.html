@@ -1,0 +1,12 @@
+<h2 mat-dialog-title> {{data.name}} </h2>
+<mat-dialog-content>
+    <img alt={{data.name}} class="prod-pic" [src]="'http://localhost:1000'+data.image"
+        onerror='this.src="https:\\i.pinimg.com/originals/5b/5b/68/5b5b68ddf9de812ffc941238e66049ac.png"' />
+    <input min="1" class="amount-inp" type="number" [(ngModel)]="amount" />
+    {{(data.price*amount).toFixed(2)}} ₪
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close mat-dialog-close="false"> Cancel </button>
+    <button (click)="saveAmount()" mat-raised-button mat-dialog-close mat-dialog-close="true"> Add to cart! </button>
+</mat-dialog-actions>
